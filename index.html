@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lingze AI Overseas | Quiet Luxury Showcase</title>
-    
-    <!-- 引入网站标签页 Favicon 图标 -->
+    <title>灵泽出海 | Lingze Global</title>
+    <!-- 浏览器标签页 Logo 图标 -->
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- 引入 Cormorant Garamond 衬线字体（Leen Heyne 同款质感字体） -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -20,195 +14,478 @@
             padding: 0;
         }
 
-        /* 纸张质感的暖柔底色与深灰文字 */
+        /* 顺滑平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #fbf9f5;
-            color: #222222;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            line-height: 1.85;
-            letter-spacing: 0.04em;
-            -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+            background-color: #0d0d0d;
+            color: #8c8c8c;
+            line-height: 1.8;
+            padding: 40px 20px;
         }
 
-        /* 顶部导航栏 */
-        header {
-            padding: 50px 20px 30px;
-            text-align: center;
-        }
-
-        .brand-logo {
-            font-size: 24px;
-            font-weight: 400;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: #111111;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        /* 极致单列内容区（限制宽度 640px，营造呼吸感） */
-        .main-container {
-            max-width: 640px;
+        .container {
+            max-width: 860px;
             margin: 0 auto;
-            padding: 20px 24px 80px;
         }
 
-        /* 首屏展示大图 */
-        .hero-image-wrap {
-            margin-bottom: 60px;
-            text-align: center;
+        /* 顶部导航吸顶与悬停下划线动效 */
+        .header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: sticky;
+            top: 0;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            padding-top: 10px;
         }
 
-        .hero-image-wrap img {
+        .brand-title {
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #f0f0f0;
+            font-family: "Songti SC", "SimSun", Georgia, serif;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #b89762;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .nav-item {
+            margin-left: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #7a7a7a;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: #d4a76a;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: #b89762;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
             width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 2px;
-            filter: contrast(0.96) brightness(1.02); /* 微微柔化图片质感 */
         }
 
-        /* 品牌理念段落 */
-        .narrative-section {
-            margin-bottom: 70px;
-            text-align: left;
+        /* Hero Mission */
+        .hero-section {
+            margin-bottom: 50px;
+            padding-top: 10px;
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #b89762;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: Georgia, serif;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 300;
+            color: #ffffff;
+            line-height: 1.4;
+            letter-spacing: 1.5px;
+            font-family: "Songti SC", "SimSun", Georgia, serif;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            color: #6e6e6e;
+            letter-spacing: 0.8px;
+            max-width: 90%;
+            line-height: 1.8;
+        }
+
+        /* Section Layout */
+        .section {
+            margin-bottom: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            scroll-margin-top: 90px;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            color: #b89762;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
         }
 
         .section-title {
             font-size: 20px;
             font-weight: 400;
-            font-style: italic;
-            letter-spacing: 0.08em;
-            margin-bottom: 24px;
-            color: #444444;
+            color: #e0e0e0;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-family: "Songti SC", "SimSun", Georgia, serif;
         }
 
-        .paragraph {
-            font-size: 17px;
-            font-weight: 300;
-            color: #333333;
-            margin-bottom: 24px;
-            word-spacing: 0.05em;
+        /* Grid & Card 悬停变色动效 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
         }
 
-        /* 细节图展示 */
-        .detail-image-wrap {
-            margin: 50px 0 70px;
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .detail-image-wrap img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
         }
 
-        /* 联系方式与页脚 */
-        .contact-section {
-            border-top: 1px solid #e2ded8;
-            padding-top: 40px;
-            margin-top: 60px;
+        .card:hover {
+            border-color: #b89762;
+            background: rgba(184, 151, 98, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -10px rgba(184, 151, 98, 0.15);
         }
 
-        .contact-list {
-            list-style: none;
+        .card-title {
             font-size: 15px;
-            font-weight: 300;
-            color: #555555;
-        }
-
-        .contact-list li {
+            color: #d4d4d4;
             margin-bottom: 10px;
-            letter-spacing: 0.06em;
+            font-weight: 400;
+            transition: color 0.3s;
         }
 
-        .contact-list a {
-            color: #222222;
-            text-decoration: none;
-            border-bottom: 1px solid #111111;
-            padding-bottom: 1px;
-            transition: opacity 0.2s ease;
+        .card:hover .card-title {
+            color: #ffffff;
         }
 
-        .contact-list a:hover {
-            opacity: 0.6;
+        p {
+            color: #7a7a7a;
+            font-size: 13.5px;
+            text-align: justify;
+            line-height: 1.7;
+            transition: color 0.3s;
         }
 
-        footer {
-            margin-top: 60px;
+        .card:hover p {
+            color: #a0a0a0;
+        }
+
+        /* Channels 悬停动效 */
+        .channels {
+            margin: 20px 0;
+        }
+
+        .channel-tag {
+            display: inline-block;
+            border: 1px solid rgba(184, 151, 98, 0.3);
+            color: #b89762;
+            padding: 5px 16px;
             font-size: 12px;
-            font-weight: 300;
-            color: #888888;
-            letter-spacing: 0.1em;
+            letter-spacing: 1.5px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            background: rgba(184, 151, 98, 0.02);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .channel-tag:hover {
+            border-color: #d4a76a;
+            color: #ffffff;
+            background: rgba(184, 151, 98, 0.15);
+            transform: scale(1.03);
+        }
+
+        /* Formula Box */
+        .formula-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 22px;
+            margin: 22px 0;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            border-color: #b89762;
+            background: rgba(184, 151, 98, 0.03);
+        }
+
+        .formula-text {
+            font-family: Georgia, "Songti SC", serif;
+            font-size: 15px;
+            color: #d4a76a;
+            letter-spacing: 2px;
+        }
+
+        /* Step List */
+        .step-item {
+            margin-bottom: 12px;
+            padding: 8px 10px 8px 24px;
+            position: relative;
+            font-size: 13.5px;
+            color: #8c8c8c;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .step-item::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #b89762;
+            transition: transform 0.3s;
+        }
+
+        .step-item:hover {
+            background: rgba(255, 255, 255, 0.02);
+            color: #b8b8b8;
+        }
+
+        .step-item:hover::before {
+            transform: scale(1.4);
+            color: #d4a76a;
+        }
+
+        .step-item strong {
+            color: #d4d4d4;
+            font-weight: 400;
+        }
+
+        /* Values Block */
+        .value-block {
+            border-left: 2px solid rgba(184, 151, 98, 0.4);
+            padding-left: 20px;
+            margin-bottom: 22px;
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+
+        .value-block:hover {
+            border-left-color: #d4a76a;
+            background: linear-gradient(90deg, rgba(184, 151, 98, 0.05) 0%, transparent 100%);
+            padding-left: 25px;
+        }
+
+        .value-title {
+            color: #e0e0e0;
+            font-size: 15px;
+            margin-bottom: 6px;
+            transition: color 0.3s;
+        }
+
+        .value-block:hover .value-title {
+            color: #ffffff;
+        }
+
+        /* Decision Box */
+        .ruler-box {
+            border: 1px solid rgba(184, 151, 98, 0.4);
+            padding: 30px;
+            text-align: center;
+            background: rgba(184, 151, 98, 0.02);
+            margin-top: 20px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .ruler-box:hover {
+            border-color: #d4a76a;
+            background: rgba(184, 151, 98, 0.06);
+            box-shadow: 0 0 30px rgba(184, 151, 98, 0.08);
+            transform: scale(1.01);
+        }
+
+        .ruler-quote {
+            font-size: 16px;
+            color: #f0f0f0;
+            font-family: "Songti SC", "SimSun", Georgia, serif;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* Dual-aligned Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-left {
+            color: #7a7a7a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             text-transform: uppercase;
         }
 
-        /* 响应式移动端适配 */
-        @media (max-width: 768px) {
-            header {
-                padding: 40px 20px 20px;
-            }
-            .brand-logo {
-                font-size: 20px;
-            }
-            .main-container {
-                padding: 10px 20px 60px;
-            }
-            .paragraph {
-                font-size: 16px;
+        .footer-right {
+            color: #8c8c8c;
+            font-family: "Songti SC", "SimSun", Georgia, serif;
+        }
+
+        @media (max-width: 600px) {
+            .footer {
+                flex-direction: column-reverse;
+                gap: 12px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. 品牌 Logo 居中展示 -->
-    <header>
-        <a href="#" class="brand-logo">灵泽AI出海</a>
-    </header>
+    <div class="container">
 
-    <main class="main-container">
-
-        <!-- 2. 首屏高质感主宣图 -->
-        <div class="hero-image-wrap">
-            <img src="hero.jpg" alt="Brand Craftsmanship">
+        <!-- Fixed Header Navigation -->
+        <div class="header">
+            <div class="brand-box">
+                <div class="brand-title">灵泽出海</div>
+                <div class="brand-subtitle">LINGZE GLOBAL</div>
+            </div>
+            <div class="nav-links">
+                <a href="#background" class="nav-item">时代背景</a>
+                <a href="#logic" class="nav-item">商业逻辑</a>
+                <a href="#values" class="nav-item">核心价值观</a>
+            </div>
         </div>
 
-        <!-- 3. 品牌哲学与故事叙述 -->
-        <section class="narrative-section">
-            <h2 class="section-title">让中国制造的下一站，走向世界每一个角落。</h2>
-            <p class="paragraph">
-                在繁复世界之中，我们专注于寻找极简与质感之间的微妙平衡。每一个细节的雕琢，不仅是对工艺的敬畏，更是对品牌理念最纯粹的无声表达。
-            </p>
-            <p class="paragraph">
-                我们摒弃冗余的装饰，保留材质最本真的纹理与温度。无论时光如何流转，经得起凝视的作品，自会传递静谧而持久的力量。
-            </p>
-        </section>
-
-        <!-- 4. 工艺/场景细节展示图 -->
-        <div class="detail-image-wrap">
-            <img src="detail.jpg" alt="Design Detail">
+        <!-- Hero / Mission -->
+        <div class="hero-section">
+            <div class="hero-tag">MISSION & GLOBAL VISION</div>
+            <div class="hero-title">让中国制造的下一站，走向世界每一个角落。</div>
+            <div class="hero-desc">以全球流速最快的数字流量与内容语言，重新连接顶级制造能力与海外真实需求，守护本土实体的生生不息。</div>
         </div>
 
-        <!-- 5. 再次强调品牌精神 -->
-        <section class="narrative-section">
-            <h2 class="section-title">Craftsmanship</h2>
-            <p class="paragraph">
-                坚持静奢与可持续的创作态度。从概念构思到最终呈现在您面前，我们用心对待每一道工序，让科技与艺术在不经意间完美相融。
-            </p>
-        </section>
+        <!-- Section 1 -->
+        <div class="section" id="background">
+            <div class="section-tag">01 / BACKGROUND</div>
+            <div class="section-title">时代背景：为什么这件事非做不可？</div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-title">前辈的沉淀与困局</div>
+                    <p>70/80后的前辈们用半辈子苦干，建成了全球最强的中国制造业底座，留下了顶级的“好产品、好工艺、好产能”。然而，产能过剩与内需不足的矛盾交织，导致工厂订单萎缩、实体经济步履维艰。</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">新一代的使命与优势</div>
+                    <p>90/00后受过高等教育，懂互联网、懂流量、懂外语、有创造力。这是前辈们不擅长或难以跨越的领域，也是时代赋予新一代的最强武器——用全新的语言，去接管全球市场的接力棒。</p>
+                </div>
+            </div>
+        </div>
 
-        <!-- 6. 极简联系方式与页脚 -->
-        <section class="contact-section">
-            <ul class="contact-list">
-                <li>INQUIRIES: <a href="mailto:info@lingzeglobal.com">info@lingzeglobal.com</a></li>
-                <li>PRESS & MEDIA: <a href="mailto:press@lingzeglobal.com">press@lingzeglobal.com</a></li>
-            </ul>
+        <!-- Section 2 -->
+        <div class="section" id="logic">
+            <div class="section-tag">02 / BUSINESS LOGIC</div>
+            <div class="section-title">商业逻辑：我们怎么打通闭环？</div>
+            <p>我们利用全渠道矩阵建立海外流量阵地，打破传统外贸被动格局：</p>
+            
+            <div class="channels">
+                <span class="channel-tag">TIKTOK</span>
+                <span class="channel-tag">独立站</span>
+                <span class="channel-tag">亚马逊</span>
+                <span class="channel-tag">传统外贸</span>
+            </div>
 
-            <footer>
-                &copy; 2026 LINGZE AI OVERSEAS. ALL RIGHTS RESERVED.
-            </footer>
-        </section>
+            <div class="formula-box">
+                <div class="formula-text">
+                    海外流量 &nbsp;&rarr;&nbsp; 自主品牌 &nbsp;&rarr;&nbsp; 工厂订单 &nbsp;&rarr;&nbsp; 正向生态
+                </div>
+            </div>
 
-    </main>
+            <div class="step-list">
+                <div class="step-item">
+                    <strong>获取海外流量：</strong>用年轻人的数字语言与内容力，直接触达海外消费者；
+                </div>
+                <div class="step-item">
+                    <strong>卖出自有品牌：</strong>提升产品溢价，摆脱贴牌与代工的被动局面；
+                </div>
+                <div class="step-item">
+                    <strong>反哺国内工厂：</strong>将源源不断的海外订单下给工厂，让工厂活下来、工人有收入；
+                </div>
+                <div class="step-item">
+                    <strong>正向生态共赢：</strong>订单激活生产，收入带动消费，最终让本土实体生态整体受益。
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section" id="values">
+            <div class="section-tag">03 / CORE VALUES</div>
+            <div class="section-title">核心价值观（公司文化 / 招聘 / 团队决策）</div>
+            
+            <div class="value-block">
+                <div class="value-title">第一层：流量即桥梁（能力之基）</div>
+                <p>我们用前辈看不懂的流量语言与新工具，打破地域与文化的壁垒，把他们造不出的海外订单带回来。</p>
+            </div>
+
+            <div class="value-block">
+                <div class="value-title">第二层：双向奔赴的共赢（终局之志）</div>
+                <p>工厂得到订单，我们得到收益，工人得到饭碗，实体得到喘息。没有谁在单方面牺牲，所有人都在赢。</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section" id="metric">
+            <div class="section-tag">04 / DECISION METRIC</div>
+            <div class="section-title">日常决策的尺子</div>
+            <p>我们在面对每一个业务方向、合作项目或投放策略时，以此作为唯一衡量标准：</p>
+            
+            <div class="ruler-box">
+                <div class="ruler-quote">“这能不能让我们持续创造海外订单，并让合作的工厂多活一阵？”</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-left">© 2026 LINGZE GLOBAL. ALL RIGHTS RESERVED.</div>
+            <div class="footer-right">灵泽出海 · 让中国制造走向世界角落</div>
+        </div>
+
+    </div>
 
 </body>
 </html>
