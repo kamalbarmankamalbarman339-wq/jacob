@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Title | Quiet Luxury Showcase</title>
+    <!-- 引入 Cormorant Garamond 衬线字体（Leen Heyne 同款质感字体） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 纸张质感的暖柔底色与深灰文字 */
+        body {
+            background-color: #fbf9f5;
+            color: #222222;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            line-height: 1.85;
+            letter-spacing: 0.04em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        .brand-logo {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #111111;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* 极致单列内容区（限制宽度 640px，营造呼吸感） */
+        .main-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        /* 首屏展示大图 */
+        .hero-image-wrap {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+            filter: contrast(0.96) brightness(1.02); /* 微微柔化图片质感 */
+        }
+
+        /* 品牌理念段落 */
+        .narrative-section {
+            margin-bottom: 70px;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+            color: #444444;
+        }
+
+        .paragraph {
+            font-size: 17px;
+            font-weight: 300;
+            color: #333333;
+            margin-bottom: 24px;
+            word-spacing: 0.05em;
+        }
+
+        /* 细节图展示 */
+        .detail-image-wrap {
+            margin: 50px 0 70px;
+        }
+
+        .detail-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 联系方式与页脚 */
+        .contact-section {
+            border-top: 1px solid #e2ded8;
+            padding-top: 40px;
+            margin-top: 60px;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 15px;
+            font-weight: 300;
+            color: #555555;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+            letter-spacing: 0.06em;
+        }
+
+        .contact-list a {
+            color: #222222;
+            text-decoration: none;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 1px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-list a:hover {
+            opacity: 0.6;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #888888;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* 响应式移动端适配 */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px 20px;
+            }
+            .brand-logo {
+                font-size: 20px;
+            }
+            .main-container {
+                padding: 10px 20px 60px;
+            }
+            .paragraph {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 品牌 Logo 居中展示 -->
+    <header>
+        <a href="#" class="brand-logo">灵泽出海</a>
+    </header>
+
+    <main class="main-container">
+
+        <!-- 2. 首屏高质感主宣图 -->
+        <div class="hero-image-wrap">
+            <img src="hero.jpg" alt="Brand Craftsmanship">
+        </div>
+
+        <!-- 3. 品牌哲学与故事叙述 -->
+        <section class="narrative-section">
+            <h2 class="section-title">让中国制造的下一站，走向世界每一个角落。</h2>
+            <p class="paragraph">
+                在繁复世界之中，我们专注于寻找极简与质感之间的微妙平衡。每一个细节的雕琢，不仅是对工艺的敬畏，更是对品牌理念最纯粹的无声表达。
+            </p>
+            <p class="paragraph">
+                我们摒弃冗余的装饰，保留材质最本真的纹理与温度。无论时光如何流转，经得起凝视的作品，自会传递静谧而持久的力量。
+            </p>
+        </section>
+
+        <!-- 4. 工艺/场景细节展示图 -->
+        <div class="detail-image-wrap">
+            <img src="detail.jpg" alt="Design Detail">
+        </div>
+
+        <!-- 5. 再次强调品牌精神 -->
+        <section class="narrative-section">
+            <h2 class="section-title">Craftsmanship</h2>
+            <p class="paragraph">
+                坚持静奢与可持续的创作态度。从概念构思到最终呈现在您面前，我们用心对待每一道工序，让科技与艺术在不经意间完美相融。
+            </p>
+        </section>
+
+        <!-- 6. 极简联系方式与页脚 -->
+        <section class="contact-section">
+            <ul class="contact-list">
+                <li>INQUIRIES: <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+                <li>PRESS & MEDIA: <a href="mailto:press@yourdomain.com">press@yourdomain.com</a></li>
+                <li>STUDIO: +86 10 8888 9999</li>
+            </ul>
+
+            <footer>
+                &copy; 2026 YOUR BRAND. ALL RIGHTS RESERVED.
+            </footer>
+        </section>
+
+    </main>
+
+</body>
+</html>
