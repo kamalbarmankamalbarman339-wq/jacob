@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>灵泽出海 | Lingze Global</title>
     <!-- 浏览器标签页 Logo 图标 -->
@@ -24,59 +24,97 @@
             background-color: #0d0d0d;
             color: #8c8c8c;
             line-height: 1.8;
-            padding: 40px 20px;
+            padding: 20px 16px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 24px;
+            }
         }
 
         .container {
             max-width: 860px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        /* 顶部导航吸顶与悬停下划线动效 */
+        /* 顶部导航吸顶 */
         .header {
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 25px;
-            margin-bottom: 40px;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start;
             position: sticky;
             top: 0;
             background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             z-index: 100;
-            padding-top: 10px;
+            padding-top: 15px;
+        }
+
+        @media (min-width: 640px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding-bottom: 25px;
+                margin-bottom: 40px;
+            }
         }
 
         .brand-title {
-            font-size: 26px;
+            font-size: clamp(22px, 5vw, 26px);
             font-weight: 300;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #f0f0f0;
             font-family: "Songti SC", "SimSun", Georgia, serif;
         }
 
         .brand-subtitle {
-            font-size: 11px;
-            letter-spacing: 3px;
+            font-size: 10px;
+            letter-spacing: 2.5px;
             color: #b89762;
             text-transform: uppercase;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         .nav-links {
             font-size: 13px;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .nav-links {
+                width: auto;
+                gap: 0;
+            }
         }
 
         .nav-item {
-            margin-left: 25px;
             cursor: pointer;
             text-decoration: none;
             color: #7a7a7a;
             transition: all 0.3s ease;
             position: relative;
             padding-bottom: 4px;
+            font-size: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .nav-item {
+                margin-left: 25px;
+                font-size: 13px;
+            }
         }
 
         .nav-item:hover, .nav-item.active {
@@ -98,85 +136,107 @@
             width: 100%;
         }
 
-        /* Hero Mission */
+        /* Hero Mission Section */
         .hero-section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             padding-top: 10px;
         }
 
         .hero-tag {
-            font-size: 11px;
-            letter-spacing: 3px;
+            font-size: 10px;
+            letter-spacing: 2.5px;
             color: #b89762;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-family: Georgia, serif;
         }
 
         .hero-title {
-            font-size: 32px;
+            font-size: clamp(24px, 6vw, 32px);
             font-weight: 300;
             color: #ffffff;
             line-height: 1.4;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             font-family: "Songti SC", "SimSun", Georgia, serif;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-desc {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #6e6e6e;
-            letter-spacing: 0.8px;
-            max-width: 90%;
+            letter-spacing: 0.5px;
+            max-width: 100%;
             line-height: 1.8;
+        }
+
+        @media (min-width: 768px) {
+            .hero-desc {
+                font-size: 14px;
+                max-width: 90%;
+            }
         }
 
         /* Section Layout */
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 30px;
-            scroll-margin-top: 90px;
+            padding-top: 25px;
+            scroll-margin-top: 120px;
+        }
+
+        @media (min-width: 640px) {
+            .section {
+                margin-bottom: 50px;
+                padding-top: 30px;
+                scroll-margin-top: 90px;
+            }
         }
 
         .section-tag {
-            font-size: 11px;
-            letter-spacing: 2.5px;
+            font-size: 10px;
+            letter-spacing: 2px;
             color: #b89762;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-family: Georgia, serif;
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: clamp(17px, 4vw, 20px);
             font-weight: 400;
             color: #e0e0e0;
             letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-family: "Songti SC", "SimSun", Georgia, serif;
         }
 
-        /* Grid & Card 悬停变色动效 */
+        /* Grid & Card */
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 16px;
             margin-bottom: 15px;
         }
 
-        @media (max-width: 600px) {
+        @media (min-width: 640px) {
             .grid-2 {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
         }
 
         .card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 24px;
+            padding: 20px;
             transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
+        }
+
+        @media (min-width: 640px) {
+            .card {
+                padding: 24px;
+            }
         }
 
         .card:hover {
@@ -200,30 +260,37 @@
 
         p {
             color: #7a7a7a;
-            font-size: 13.5px;
+            font-size: 13px;
             text-align: justify;
             line-height: 1.7;
             transition: color 0.3s;
+        }
+
+        @media (min-width: 640px) {
+            p {
+                font-size: 13.5px;
+            }
         }
 
         .card:hover p {
             color: #a0a0a0;
         }
 
-        /* Channels 悬停动效 */
+        /* Channels 标签页 */
         .channels {
-            margin: 20px 0;
+            margin: 16px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .channel-tag {
             display: inline-block;
             border: 1px solid rgba(184, 151, 98, 0.3);
             color: #b89762;
-            padding: 5px 16px;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            margin-right: 8px;
-            margin-bottom: 8px;
+            padding: 5px 14px;
+            font-size: 11px;
+            letter-spacing: 1px;
             background: rgba(184, 151, 98, 0.02);
             transition: all 0.3s ease;
             cursor: pointer;
@@ -236,14 +303,21 @@
             transform: scale(1.03);
         }
 
-        /* Formula Box */
+        /* Formula Box 链路框 */
         .formula-box {
             text-align: center;
             background: rgba(255, 255, 255, 0.015);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 22px;
-            margin: 22px 0;
+            padding: 16px 12px;
+            margin: 18px 0;
             transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+            .formula-box {
+                padding: 22px;
+                margin: 22px 0;
+            }
         }
 
         .formula-box:hover {
@@ -253,17 +327,19 @@
 
         .formula-text {
             font-family: Georgia, "Songti SC", serif;
-            font-size: 15px;
+            font-size: clamp(12px, 3.2vw, 15px);
             color: #d4a76a;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            white-space: normal;
+            line-height: 1.8;
         }
 
         /* Step List */
         .step-item {
-            margin-bottom: 12px;
-            padding: 8px 10px 8px 24px;
+            margin-bottom: 10px;
+            padding: 8px 10px 8px 20px;
             position: relative;
-            font-size: 13.5px;
+            font-size: 13px;
             color: #8c8c8c;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -272,7 +348,7 @@
         .step-item::before {
             content: "•";
             position: absolute;
-            left: 8px;
+            left: 6px;
             color: #b89762;
             transition: transform 0.3s;
         }
@@ -295,21 +371,28 @@
         /* Values Block */
         .value-block {
             border-left: 2px solid rgba(184, 151, 98, 0.4);
-            padding-left: 20px;
-            margin-bottom: 22px;
+            padding-left: 16px;
+            margin-bottom: 18px;
             transition: all 0.35s ease;
             cursor: pointer;
+        }
+
+        @media (min-width: 640px) {
+            .value-block {
+                padding-left: 20px;
+                margin-bottom: 22px;
+            }
         }
 
         .value-block:hover {
             border-left-color: #d4a76a;
             background: linear-gradient(90deg, rgba(184, 151, 98, 0.05) 0%, transparent 100%);
-            padding-left: 25px;
+            padding-left: 22px;
         }
 
         .value-title {
             color: #e0e0e0;
-            font-size: 15px;
+            font-size: 14.5px;
             margin-bottom: 6px;
             transition: color 0.3s;
         }
@@ -318,15 +401,22 @@
             color: #ffffff;
         }
 
-        /* Decision Box */
+        /* Decision Ruler Box */
         .ruler-box {
             border: 1px solid rgba(184, 151, 98, 0.4);
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             background: rgba(184, 151, 98, 0.02);
-            margin-top: 20px;
+            margin-top: 16px;
             transition: all 0.4s ease;
             cursor: pointer;
+        }
+
+        @media (min-width: 640px) {
+            .ruler-box {
+                padding: 30px;
+                margin-top: 20px;
+            }
         }
 
         .ruler-box:hover {
@@ -337,26 +427,39 @@
         }
 
         .ruler-quote {
-            font-size: 16px;
+            font-size: clamp(14px, 3.8vw, 16px);
             color: #f0f0f0;
             font-family: "Songti SC", "SimSun", Georgia, serif;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             line-height: 1.6;
         }
 
         /* Contact Section Grid */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 14px;
             margin-top: 15px;
+        }
+
+        @media (min-width: 640px) {
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.015);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
+            padding: 16px;
             transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+            .contact-card {
+                padding: 20px;
+            }
         }
 
         .contact-card:hover {
@@ -366,39 +469,42 @@
         }
 
         .contact-label {
-            font-size: 11px;
+            font-size: 10px;
             color: #b89762;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 6px;
         }
 
         .contact-value {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #e0e0e0;
             letter-spacing: 0.5px;
+            word-break: break-all;
         }
 
-        .contact-value a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-value a:hover {
-            color: #d4a76a;
-        }
-
-        /* Dual-aligned Footer */
+        /* Footer */
         .footer {
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 40px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column-reverse;
+            gap: 12px;
             align-items: center;
+            text-align: center;
             font-size: 11px;
             letter-spacing: 1.5px;
+        }
+
+        @media (min-width: 640px) {
+            .footer {
+                margin-top: 60px;
+                padding-top: 30px;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
         }
 
         .footer-left {
@@ -411,14 +517,6 @@
             color: #8c8c8c;
             font-family: "Songti SC", "SimSun", Georgia, serif;
         }
-
-        @media (max-width: 600px) {
-            .footer {
-                flex-direction: column-reverse;
-                gap: 12px;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -429,7 +527,7 @@
         <div class="header">
             <div class="brand-box">
                 <div class="brand-title">灵泽出海</div>
-                <div class="brand-subtitle">LINGZE GLOBAL</div>
+                <div class="brand-subtitle">Lingze Global</div>
             </div>
             <div class="nav-links">
                 <a href="#background" class="nav-item">时代背景</a>
@@ -549,8 +647,8 @@
 
         <!-- Footer -->
         <div class="footer">
-            <div class="footer-left">© 2026 LINGZE GLOBAL. ALL RIGHTS RESERVED.</div>
-            <div class="footer-right">灵泽出海 · 让中国制造走向全世界</div>
+            <div class="footer-left">© 2026 Hebei Lingze Cultural Media Co., Ltd. ALL RIGHTS RESERVED.</div>
+            <div class="footer-right">灵泽出海 · 让中国制造走向世界的每个角落</div>
         </div>
 
     </div>
